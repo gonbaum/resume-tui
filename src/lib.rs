@@ -191,7 +191,7 @@ impl<'a> App<'a> {
         Paragraph::new(
             DATABASE
                 .github
-                .map(|gh| format!(" https://github.com/{gh}"))
+                .map(|gh| format!(" github.com/{gh}"))
                 .unwrap_or_default(),
         )
         .alignment(Alignment::Left)
@@ -199,7 +199,7 @@ impl<'a> App<'a> {
         Paragraph::new(
             DATABASE
                 .linkedin
-                .map(|li| format!("https://linkedin.com/in/{li} "))
+                .map(|li| format!("linkedin.com/in/{li} "))
                 .unwrap_or_default(),
         )
         .alignment(Alignment::Right)
