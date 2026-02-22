@@ -1,5 +1,7 @@
-name = "Gonzalo A. García"
-tag_line = "Senior Backend Engineer · TypeScript, Node.js, Kafka, Kubernetes · Berlin"
+name = "Gonzalo A. Garcia"
+tag_line = "Senior Backend Engineer - TypeScript, Node.js, Kafka, Kubernetes - Berlin"
+
+summary = "Backend Engineer with 6+ years building production systems across fintech and developer tooling. Currently at Strapi, where I led the migration of 20,000+ apps and built the Strapi Cloud CLI from scratch. AI-native engineer - I write TypeScript, think in distributed systems, and believe good engineering is a team sport."
 
 [email] = "nouvellegon@gmail.com"
 [phone] = "+4915751440766"
@@ -8,10 +10,3 @@ tag_line = "Senior Backend Engineer · TypeScript, Node.js, Kafka, Kubernetes ·
 [links]
 linkedin = "https://linkedin.com/in/gonzalo-garcia-calcaterra"
 github = "https://github.com/gonbaum"
-
-summary = """
-Backend Engineer with 6+ years building production systems across fintech and developer tooling.
-Currently at Strapi, where I led the migration of 20,000+ apps and built the Strapi Cloud CLI from scratch.
-
-AI-native engineer — I write TypeScript, think in distributed systems, and believe good engineering is a team sport.
-"""
