@@ -1,41 +1,41 @@
-[[jobs]]
+[[job]]
 company = "Strapi"
 title = "Backend Engineer"
 start = "Oct 2023"
 
-[[jobs]]
+[[job]]
 company = "Taxfix"
 title = "Software Engineer"
 start = "May 2021"
 end = "Oct 2023"
 
-[[jobs]]
+[[job]]
 company = "Blackbird Collective"
 title = "Tech Consultant"
 start = "Mar 2020"
 end = "May 2021"
 
-[[jobs]]
+[[job]]
 id = "freelance"
 company = "Freelance"
 title = "Fullstack Web Developer"
 start = "Mar 2019"
 end = "May 2021"
 
-[[jobs]]
+[[job]]
 company = "RWS Moravia"
 title = "Project Team Lead"
 start = "Oct 2018"
 end = "Apr 2019"
 
-[[jobs]]
+[[job]]
 id = "360panoramica"
 company = "360panoramica"
 title = "VR Media Producer & Web Developer"
 start = "Jan 2012"
 end = "Oct 2017"
 
-[[jobs]]
+[[job]]
 company = "Cassini y Cesaratto S.A."
 title = "Intern Fullstack Engineer"
 start = "Feb 2015"
