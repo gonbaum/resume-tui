@@ -1,0 +1,11 @@
+headline = "Event-driven architecture at scale"
+snippet = "Designed and operated Kafka and RabbitMQ pipelines powering Strapi Cloud's async infrastructure"
+detail = """
+Core contributor to Strapi Cloud's **event-driven backend** — responsible for designing, building, and migrating the async messaging layer that powers the platform.
+
+- Designed **event schemas, queues, and worker architecture** for cloud provisioning and lifecycle management
+- Led migration from **Apache Kafka to RabbitMQ**: defined the new topology, coordinated rollout, ensured zero message loss
+- Built and maintained background workers handling deployment jobs, health monitoring, and provider sync
+
+**Stack:** Apache Kafka · RabbitMQ · Node.js · TypeScript · Kubernetes
+"""

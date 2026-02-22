@@ -1,10 +1,19 @@
 [[project]]
-name = "github.com/gonbaum"
-short_desc = "Personal projects and open-source contributions"
+name = "Strapi Cloud CLI"
+short_desc = "Official CLI for Strapi Cloud — built from scratch"
 long_desc = """
-Personal GitHub with various projects spanning web development, tooling, and experiments.
+The **Strapi Cloud CLI** is the primary developer tool for deploying and managing projects on Strapi Cloud.
 
-Primarily focused on TypeScript, Node.js, and modern web technologies.
+I designed and built it from the ground up, integrating it with Strapi v4 and the Strapi Cloud PaaS backend.
+
+→ [github.com/strapi/strapi](https://github.com/strapi/strapi)
+"""
+
+[[project]]
+name = "github.com/gonbaum"
+short_desc = "Personal projects and experiments"
+long_desc = """
+Personal GitHub with side projects and experiments, mostly TypeScript and Node.js.
 
 → [github.com/gonbaum](https://github.com/gonbaum)
 """

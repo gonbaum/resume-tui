@@ -1,0 +1,12 @@
+headline = "Fullstack web development for Berlin-area clients"
+snippet = "Delivered web apps and JAMstack sites across frontend and backend for startups and SMEs"
+detail = """
+Worked as an independent fullstack developer, delivering projects end-to-end for clients in Berlin and remotely.
+
+- Built marketing sites, web apps, and e-commerce solutions using modern JS stacks
+- Handled everything from architecture decisions to deployment
+
+**Frontend:** React.js · Gatsby.js · Vue.js · JavaScript
+
+**Backend:** Node.js · Express · MongoDB · WordPress
+"""

@@ -1,0 +1,12 @@
+headline = "Backend lead for tax prefill — GCP Pub/Sub & ELSTER integration"
+snippet = "Owned the backend for Taxfix's prefill feature, integrating with German tax authority ELSTER via async queues"
+detail = """
+Led backend development for **prefill** — one of Taxfix's core features, allowing users to auto-populate their tax returns with official government data.
+
+- Owned the integration with **ELSTER** (Germany's official tax submission system), handling auth, data retrieval, and error edge cases
+- Built and maintained the **Google Cloud Pub/Sub** pipeline for async prefill job processing at scale
+- Worked across the stack: Node.js backend services, React.js web, and React Native mobile features
+- Also contributed to **marketing tech** infrastructure — tracking, experimentation, and analytics pipelines
+
+**Stack:** Node.js · TypeScript · Google Cloud Pub/Sub · PostgreSQL · Redis · Airflow · React.js · React Native
+"""

@@ -1,0 +1,11 @@
+headline = "Built Strapi Cloud CLI from scratch"
+snippet = "Designed and implemented the official CLI for Strapi Cloud, integrated with Strapi v4"
+detail = """
+Designed and built the **Strapi Cloud CLI** from the ground up — the primary developer interface for deploying and managing projects on Strapi Cloud.
+
+- Architected the full CLI from scratch: command structure, auth flows, project linking, and deployment pipeline
+- Integrated deeply with **Strapi v4** internals to support seamless local-to-cloud workflows
+- Focused heavily on **developer experience (DX)**: clear error messages, minimal friction, sensible defaults
+
+**Stack:** TypeScript · Node.js · Strapi v4
+"""

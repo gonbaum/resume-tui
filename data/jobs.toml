@@ -10,16 +10,16 @@ start = "May 2021"
 end = "Oct 2023"
 
 [[job]]
-company = "Blackbird Collective"
-title = "Tech Consultant"
-start = "Mar 2020"
+id = "freelance"
+company = "Freelance"
+title = "Software Engineer"
+start = "Mar 2019"
 end = "May 2021"
 
 [[job]]
-id = "freelance"
-company = "Freelance"
-title = "Fullstack Web Developer"
-start = "Mar 2019"
+company = "Blackbird Collective"
+title = "Tech Consultant"
+start = "Mar 2020"
 end = "May 2021"
 
 [[job]]

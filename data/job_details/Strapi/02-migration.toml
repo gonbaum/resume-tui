@@ -1,0 +1,12 @@
+headline = "Led migration of 20,000+ apps — 74% cost reduction"
+snippet = "Integrated new cloud and DB providers, then led a 2-month migration of the entire Strapi Cloud fleet"
+detail = """
+Led the integration of new **compute and database providers** (Koyeb, Neon) into Strapi Cloud's PaaS infrastructure, then spearheaded the full migration of the platform's customer base.
+
+- Migrated **20,000+ production applications** over 2 months with minimal downtime
+- Reduced platform infrastructure costs from **$74,000 to $20,000/month** — a 73% reduction
+- Designed and executed the migration strategy: phased rollout, rollback plans, customer communication
+- Owned the full provider integration: provisioning APIs, networking, secrets management, health checks
+
+**Stack:** TypeScript · Node.js · Kubernetes · GCP · Koyeb · Neon (PostgreSQL)
+"""
