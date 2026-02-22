@@ -9,7 +9,7 @@ tag_line = "Senior Backend Engineer · TypeScript, Node.js, Kafka, Kubernetes ·
 linkedin = "https://linkedin.com/in/gonzalo-garcia-calcaterra"
 github = "https://github.com/gonbaum"
 
-[summary] = """
+summary = """
 Backend Engineer with 6+ years building production systems across fintech and developer tooling.
 Currently at Strapi, where I led the migration of 20,000+ apps and built the Strapi Cloud CLI from scratch.
 
