@@ -1,8 +1,13 @@
-[[school]]
-name = "Eastern Michigan University"
-graduated = "2008"
-desc = "Bachelor of Science in Communications"
+[[schools]]
+name = "University of Helsinki"
+desc = "Full Stack Open — Modern JavaScript-based web development (React, Node.js, GraphQL, TypeScript, CI/CD)"
+graduation_date = "2020"
 
-[[school]]
-name = "Minneapolis Community Education"
-desc = "Software Development Associates"
+[[schools]]
+name = "Universidad Nacional de Rosario"
+desc = "Bachelor's degree in Psychology"
+graduation_date = "2015"
+
+[[schools]]
+name = "Universidad Nacional de Rosario"
+desc = "Computer Science (partial)"

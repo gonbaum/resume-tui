@@ -1,0 +1,9 @@
+headline = "Strapi Cloud Backend"
+snippet = "Building and maintaining the cloud infrastructure for the leading open-source headless CMS"
+detail = """
+Backend Engineer on Strapi Cloud — the hosted offering of the world's leading open-source headless CMS.
+
+Working across the full backend lifecycle: API design, event-driven architecture, and cloud infrastructure.
+
+**Stack:** TypeScript · Node.js · Apache Kafka · RabbitMQ · Kubernetes · GCP
+"""

@@ -1,0 +1,9 @@
+headline = "Full-stack product development"
+snippet = "Built features across web, mobile, and backend for a leading European tax app"
+detail = """
+Software Engineer at Taxfix, a Berlin-based fintech helping millions of Europeans file their taxes.
+
+Worked across the stack on web (React.js), mobile (React Native), and backend (Node.js) services.
+
+Handled data pipelines and infrastructure with **GCP**, **PostgreSQL**, **Redis**, and **Airflow**.
+"""

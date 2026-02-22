@@ -1,30 +1,10 @@
-[[project]]
-name = "Rusty ECMA"
-short_desc = "JavaScript Parsing/Generating libraries"
+[[projects]]
+name = "github.com/gonbaum"
+short_desc = "Personal projects and open-source contributions"
+long_desc = """
+Personal GitHub with various projects spanning web development, tooling, and experiments.
 
-long_desc = """As an excuse to learn more about how parsers work in software, I started this project with the 
-primary goal of providing a flexible, general purpose suite of libraries for interacting with JavaScript source code.
+Primarily focused on TypeScript, Node.js, and modern web technologies.
 
-The project consists of a handful of crates that I've tried to seperate logically to allow user to opt-in to the code
-they want to use.
-"""
-
-[[project]]
-name = "Cosock"
-short_desc = "Lua couroutine I/O libraries"
-
-long_desc = """Cosock is both a project and an organization. The Project is a coroutine executor
-based on the [LuaSocket API](https://github.com/lunarmodules/luasocket) and uses a polling via
-`select` to schedule coroutines. It provides udp, tcp, and tls socket facilities and an MPSC channel
-implementation. The Cosock organization includes projects that build upon these primitives to
-provide HTTP facilities.
-"""
-
-[[project]]
-name = "Luminary"
-short_desc = "A compiler for Lua"
-
-long_desc = """As an exercise in learning more about compilers, this project is a Lua front-end for
-LLVM.
-
+→ [github.com/gonbaum](https://github.com/gonbaum)
 """

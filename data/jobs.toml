@@ -1,16 +1,42 @@
-[[job]]
-company = "SmartThings"
-title = "Staff Software Engineer"
-start = "March 2020"
+[[jobs]]
+company = "Strapi"
+title = "Backend Engineer"
+start = "Oct 2023"
 
-[[job]]
-company = "Solution Design Group"
-title = "Software Development Consultant"
-start = "February 2019"
-end = "March 2020"
+[[jobs]]
+company = "Taxfix"
+title = "Software Engineer"
+start = "May 2021"
+end = "Oct 2023"
 
-[[job]]
-company = "United Subcontractors"
-title = "Software Developer"
-start = "August 2017"
-end = "December 2018"
+[[jobs]]
+company = "Blackbird Collective"
+title = "Tech Consultant"
+start = "Mar 2020"
+end = "May 2021"
+
+[[jobs]]
+id = "freelance"
+company = "Freelance"
+title = "Fullstack Web Developer"
+start = "Mar 2019"
+end = "May 2021"
+
+[[jobs]]
+company = "RWS Moravia"
+title = "Project Team Lead"
+start = "Oct 2018"
+end = "Apr 2019"
+
+[[jobs]]
+id = "360panoramica"
+company = "360panoramica"
+title = "VR Media Producer & Web Developer"
+start = "Jan 2012"
+end = "Oct 2017"
+
+[[jobs]]
+company = "Cassini y Cesaratto S.A."
+title = "Intern Fullstack Engineer"
+start = "Feb 2015"
+end = "Feb 2016"
