@@ -66,6 +66,7 @@ fn generate_from_toml_files(path: PathBuf) -> String {
     log::debug!("{info:#?}");
     let name = LitStr::new(&info.name, Span::call_site());
     let tag_line = LitStr::new(&info.tag_line, Span::call_site());
+    let summary = LitStr::new(&info.summary.unwrap_or_default(), Span::call_site());
     let github = optional_str(info.github);
     let linkedin = optional_str(info.linkedin);
     let jobs_text = std::fs::read_to_string(path.join("jobs.toml")).unwrap();
@@ -85,6 +86,7 @@ fn generate_from_toml_files(path: PathBuf) -> String {
         pub static DATABASE: Database = Database {
             name: #name,
             tag_line: #tag_line,
+            summary: #summary,
             github: #github,
             linkedin: #linkedin,
             jobs: #jobs,
@@ -169,6 +171,7 @@ fn collect_oss(base_path: impl AsRef<Path>, projects: &mut Projects) {
 pub struct Info {
     name: String,
     tag_line: String,
+    summary: Option<String>,
     github: Option<String>,
     linkedin: Option<String>,
 }

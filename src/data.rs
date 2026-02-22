@@ -2,6 +2,7 @@
 pub struct Database {
     pub name: &'static str,
     pub tag_line: &'static str,
+    pub summary: &'static str,
     pub github: Option<&'static str>,
     pub linkedin: Option<&'static str>,
     pub jobs: &'static [Workplace],

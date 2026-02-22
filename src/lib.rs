@@ -109,7 +109,7 @@ impl<'a> App<'a> {
 
     fn menu_name(idx: usize) -> &'static str {
         match idx {
-            0 => "Home",
+            0 => "Root",
             1 => "Work",
             2 => "Open Source",
             3 => "Education",
@@ -127,7 +127,7 @@ impl<'a> App<'a> {
         let content_area = block.inner(area);
         block.render(area, buf);
         let list = List::new([
-            ListItem::from("Home"),
+            ListItem::from("Root"),
             "Work".into(),
             "Open Source".into(),
             "Education".into(),
@@ -171,13 +171,21 @@ impl<'a> App<'a> {
     }
 
     fn render_home(&self, area: Rect, buf: &mut Buffer) {
-        let layout = Layout::vertical(Constraint::from_percentages([45, 15, 40, 5]))
+        let layout = Layout::vertical(Constraint::from_percentages([20, 15, 40, 20, 5]))
             .flex(layout::Flex::Center);
-        let [_, content_area, _, footer] = layout.areas(area);
+        let [name_area, tag_area, summary_area, _, footer] = layout.areas(area);
 
-        Paragraph::new(vec![DATABASE.name.bold().into(), DATABASE.tag_line.into()])
+        Paragraph::new(DATABASE.name.bold())
             .alignment(Alignment::Center)
-            .render(content_area, buf);
+            .render(name_area, buf);
+        Paragraph::new(DATABASE.tag_line)
+            .alignment(Alignment::Center)
+            .render(tag_area, buf);
+        Paragraph::new(DATABASE.summary)
+            .alignment(Alignment::Center)
+            .wrap(Wrap { trim: true })
+            .render(summary_area, buf);
+
         let foot_layout = Layout::horizontal(Constraint::from_percentages([50, 50]));
         let [lhs, rhs] = foot_layout.areas(footer);
         Paragraph::new(
@@ -190,8 +198,8 @@ impl<'a> App<'a> {
         .render(lhs, buf);
         Paragraph::new(
             DATABASE
-                .github
-                .map(|li| format!("https://www.linkedin.com/in/{li} "))
+                .linkedin
+                .map(|li| format!("https://linkedin.com/in/{li} "))
                 .unwrap_or_default(),
         )
         .alignment(Alignment::Right)
