@@ -10,7 +10,8 @@ linkedin = "https://linkedin.com/in/gonzalo-garcia-calcaterra"
 github = "https://github.com/gonbaum"
 
 [summary] = """
-Agile learner and collaborative team player passionate about solving complex challenges.
-From web developer to fully equipped Full Stack Software Developer, I believe in
-continuous improvement and teamwork. Embracing sustainable practices and transparent communication.
+Backend Engineer with 6+ years building production systems across fintech and developer tooling.
+Currently at Strapi, where I led the migration of 20,000+ apps and built the Strapi Cloud CLI from scratch.
+
+AI-native engineer — I write TypeScript, think in distributed systems, and believe good engineering is a team sport.
 """
