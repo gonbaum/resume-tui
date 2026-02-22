@@ -1,4 +1,15 @@
 [[project]]
+name = "ghdeck"
+short_desc = "A terminal UI dashboard for managing GitHub repositories"
+long_desc = """
+**ghdeck** is a TUI dashboard for managing GitHub repositories, built with Ink and React.
+
+Features include split-view layout with README preview, markdown rendering, repo management (rename, toggle visibility, create, delete), and keyboard-driven navigation.
+
+→ [github.com/gonbaum/ghdeck](https://github.com/gonbaum/ghdeck)
+"""
+
+[[project]]
 name = "Strapi Cloud CLI"
 short_desc = "Official CLI for Strapi Cloud — built from scratch"
 long_desc = """
