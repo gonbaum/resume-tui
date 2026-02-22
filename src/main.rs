@@ -4,10 +4,7 @@ use crossterm::{
     terminal::{EnterAlternateScreen, LeaveAlternateScreen},
     ExecutableCommand,
 };
-use ratatui::{
-    backend::{Backend, CrosstermBackend},
-    Terminal,
-};
+use ratatui::{backend::CrosstermBackend, layout::Rect, Terminal, TerminalOptions};
 use resume_tui::{App, Error, Event};
 
 fn main() -> color_eyre::Result<()> {
@@ -58,11 +55,15 @@ fn init_error_hooks() -> color_eyre::Result<()> {
     Ok(())
 }
 
-fn init_terminal() -> color_eyre::Result<Terminal<impl Backend>> {
+fn init_terminal() -> color_eyre::Result<Terminal<CrosstermBackend<std::io::Stdout>>> {
     crossterm::terminal::enable_raw_mode()?;
     std::io::stdout().execute(EnterAlternateScreen)?;
     let backend = CrosstermBackend::new(std::io::stdout());
-    let terminal = Terminal::new(backend)?;
+    let options = TerminalOptions {
+        viewport: ratatui::Viewport::Fixed(Rect::new(0, 0, 120, 40)),
+        ..Default::default()
+    };
+    let terminal = Terminal::with_options(backend, options)?;
     Ok(terminal)
 }
 
