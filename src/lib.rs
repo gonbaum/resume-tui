@@ -171,9 +171,16 @@ impl<'a> App<'a> {
     }
 
     fn render_home(&self, area: Rect, buf: &mut Buffer) {
+        let margin = 10;
+        let inner_area = Rect {
+            x: area.x + margin,
+            y: area.y,
+            width: area.width.saturating_sub(margin * 2),
+            height: area.height,
+        };
         let layout = Layout::vertical(Constraint::from_percentages([20, 15, 40, 20, 5]))
             .flex(layout::Flex::Center);
-        let [name_area, tag_area, summary_area, _, footer] = layout.areas(area);
+        let [name_area, tag_area, summary_area, _, footer] = layout.areas(inner_area);
 
         Paragraph::new(DATABASE.name.bold())
             .alignment(Alignment::Center)
