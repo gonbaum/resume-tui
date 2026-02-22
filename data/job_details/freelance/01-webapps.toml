@@ -1,0 +1,12 @@
+headline = "Built responsive web apps and marketing sites"
+snippet = "Delivered client projects using Next.js, Gatsby, Vercel, MongoDB, and WordPress"
+detail = """
+Built and maintained responsive web apps and marketing sites for clients using modern JAMstack tools.
+
+- Created custom Next.js and Gatsby sites deployed on Vercel
+- Built REST APIs with Node.js and Express
+- Managed MongoDB databases and WordPress CMS implementations
+- Contributed to a chess game app (chessnation.de) for elderly individuals during the pandemic
+
+**Stack:** JavaScript · React.js · Next.js · Gatsby.js · Node.js · MongoDB · WordPress
+"""

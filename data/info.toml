@@ -1,2 +1,16 @@
-name = "Gonzalo García Calcaterra"
+name = "Gonzalo A. García"
 tag_line = "Senior Backend Engineer · TypeScript, Node.js, Kafka, Kubernetes · Berlin"
+
+[email] = "nouvellegon@gmail.com"
+[phone] = "+4915751440766"
+[location] = "Berlin, Germany"
+
+[links]
+linkedin = "https://linkedin.com/in/gonzalo-garcia-calcaterra"
+github = "https://github.com/gonbaum"
+
+[summary] = """
+Agile learner and collaborative team player passionate about solving complex challenges.
+From web developer to fully equipped Full Stack Software Developer, I believe in
+continuous improvement and teamwork. Embracing sustainable practices and transparent communication.
+"""

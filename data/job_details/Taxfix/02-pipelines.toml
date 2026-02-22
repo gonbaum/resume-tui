@@ -1,0 +1,13 @@
+headline = "Data pipelines and backend services at scale"
+snippet = "Built data processing pipelines and improved Taxfix's backend infrastructure"
+detail = """
+Designed and implemented backend services deployed on GCP, handling data processing and real-time features.
+
+- Enhanced data mapping algorithm, reducing user information validation time by **50%**
+- Implemented data polling logic to track user data availability from Finanzamt API, reducing user waiting time by **20%**
+- Created event-driven data anonymization worker ensuring **100% adherence** to user data protection laws (GDPR)
+- Improved app logging and created GCP dashboards with real-time alerts (Email, Slack) to minimize downtime
+- Achieved **95% test coverage** through comprehensive unit tests with Jest
+- Implemented user tracking using AVO and Segment for analytics
+
+**Stack:** TypeScript · Node.js · GCP · Pub/Sub · PostgreSQL · Redis · Airflow
