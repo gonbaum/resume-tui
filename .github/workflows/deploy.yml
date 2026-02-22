@@ -23,12 +23,8 @@ jobs:
         run: curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
 
       - name: Build browser target
-        run: |
-          cd browser
-          wasm-pack build --target web --out-dir dist/pkg
-          # Copy index.html and any static assets into dist
-          cp index.html dist/ 2>/dev/null || true
-          cp -r assets dist/ 2>/dev/null || true
+        run: wasm-pack build --target web --out-dir . --no-typescript
+        working-directory: browser
         env:
           RESUME_DATA_PATH: ${{ github.workspace }}/data
 
@@ -38,5 +34,5 @@ jobs:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-          working-directory: ./browser/dist
+          working-directory: ./browser
           vercel-args: '--prod'
