@@ -26,6 +26,26 @@
                 flex-flow: column;
                 align-items: center;
             } 
+            #header {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px 20px;
+                box-sizing: border-box;
+                color: var(--green);
+                font-family: monospace;
+            }
+            #header a {
+                color: var(--green);
+                text-decoration: none;
+                border: 1px solid var(--green);
+                padding: 5px 10px;
+            }
+            #header a:hover {
+                background: var(--green);
+                color: var(--black);
+            } 
             #term-container {
                 margin: 5px auto;
                 margin-top: 5px;
@@ -90,6 +110,10 @@
         </style>
     </head>
     <body>
+        <div id="header">
+            <span>Referencias para uso de reclasifique</span>
+            <a href="https://www.garciacalcaterra.com" target="_self">&lt; garciacalcaterra.com</a>
+        </div>
         <div id="term-container">
             <div id = "terminal"></div>
             <div id="controls">

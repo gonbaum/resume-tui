@@ -14,6 +14,7 @@ fn main() -> color_eyre::Result<()> {
     init_error_hooks()?;
     let mut terminal = init_terminal()?;
     let mut app = App::new();
+    let mut open_url: Option<String> = None;
     loop {
         app.tick(&mut terminal)?;
         if let TermEvent::Key(key) = event::read()? {
@@ -25,17 +26,25 @@ fn main() -> color_eyre::Result<()> {
                     KeyCode::Char('j') | KeyCode::Down => Event::Down,
                     KeyCode::Char('k') | KeyCode::Up => Event::Up,
                     KeyCode::Char('l') | KeyCode::Right | KeyCode::Enter => Event::Right,
+                    KeyCode::Char('b') => Event::Back,
                     _ => continue,
                 };
-                let res = app.event(ev);
-                if matches!(res, Err(Error::Exit)) {
-                    break;
+                match app.event(ev) {
+                    Ok(()) => {}
+                    Err(Error::Exit) => break,
+                    Err(Error::OpenUrl(url)) => {
+                        open_url = Some(url);
+                        break;
+                    }
+                    Err(e) => return Err(e.into()),
                 }
-                res?;
             }
         }
     }
     restore_terminal()?;
+    if let Some(url) = open_url {
+        open_in_browser(&url);
+    }
 
     Ok(())
 }
@@ -65,6 +74,15 @@ fn init_terminal() -> color_eyre::Result<Terminal<CrosstermBackend<std::io::Stdo
     };
     let terminal = Terminal::with_options(backend, options)?;
     Ok(terminal)
+}
+
+fn open_in_browser(url: &str) {
+    #[cfg(target_os = "macos")]
+    let _ = std::process::Command::new("open").arg(url).spawn();
+    #[cfg(target_os = "linux")]
+    let _ = std::process::Command::new("xdg-open").arg(url).spawn();
+    #[cfg(target_os = "windows")]
+    let _ = std::process::Command::new("cmd").args(["/c", "start", url]).spawn();
 }
 
 fn restore_terminal() -> color_eyre::Result<()> {

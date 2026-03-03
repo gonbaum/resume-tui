@@ -94,6 +94,7 @@ impl<'a> App<'a> {
             Event::Left => self.handle_left(),
             Event::Right => self.handle_right(),
             Event::Quit => return Err(Error::Exit),
+            Event::Back => return Err(Error::OpenUrl("https://www.garciacalcaterra.com".to_string())),
         }
         Ok(())
     }
@@ -121,6 +122,7 @@ impl<'a> App<'a> {
         let block = Block::bordered()
             .title("Menu")
             .title_alignment(Alignment::Center)
+            .title_bottom("[b] back")
             .border_set(ratatui::symbols::border::PLAIN)
             .borders(Borders::TOP | Borders::LEFT | Borders::BOTTOM)
             .style(DEFAULT_STYLE);
@@ -271,6 +273,7 @@ pub enum Event {
     Left,
     Right,
     Quit,
+    Back,
 }
 
 #[derive(Debug, thiserror::Error)]
@@ -279,4 +282,6 @@ pub enum Error {
     Io(#[from] std::io::Error),
     #[error("Exit")]
     Exit,
+    #[error("Open URL")]
+    OpenUrl(String),
 }
