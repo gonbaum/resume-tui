@@ -16,44 +16,53 @@
                 --black: #141414;
             }
 
-            body {
+            html, body {
                 margin: 0;
-                overflow: hidden;
-                background: var(--black);
+                padding: 0;
                 width: 100%;
                 height: 100%;
+            }
+
+            body {
+                background: var(--black);
                 display: flex;
-                flex-flow: column;
+                flex-direction: column;
                 align-items: center;
-            } 
-            #header {
+                overflow: hidden;
+                height: 100vh;
+            }
+
+            #term-wrapper {
+                flex: 1;
                 width: 100%;
+                overflow: hidden;
                 display: flex;
-                justify-content: space-between;
                 align-items: center;
-                padding: 10px 20px;
-                box-sizing: border-box;
-                color: var(--green);
-                font-family: monospace;
+                justify-content: center;
             }
-            #header a {
-                color: var(--green);
-                text-decoration: none;
-                border: 1px solid var(--green);
-                padding: 5px 10px;
-            }
-            #header a:hover {
-                background: var(--green);
-                color: var(--black);
-            } 
+
             #term-container {
-                margin: 5px auto;
-                margin-top: 5px;
-                margin-left: auto;
-                margin-right: auto;
+                flex-shrink: 0;
                 overflow: hidden;
                 position: relative;
+                transform-origin: center center;
             }
+
+            #footer {
+                flex-shrink: 0;
+                font-family: monospace;
+                font-size: 16px;
+                color: var(--green);
+                padding: 6px 0;
+            }
+            #footer a {
+                color: var(--green);
+                text-decoration: none;
+            }
+            #footer a:hover {
+                text-decoration: underline;
+            }
+
             .xterm-helpers {
                 color: transparent;
             }
@@ -72,18 +81,10 @@
                     "l . r"
                     ". d .";
             }
-            #up {
-                grid-area: u;
-            }
-            #left {
-                grid-area: l;
-            }
-            #right {
-                grid-area: r;
-            }
-            #down {
-                grid-area: d;
-            }
+            #up { grid-area: u; }
+            #left { grid-area: l; }
+            #right { grid-area: r; }
+            #down { grid-area: d; }
             #controls button {
                 border-radius: 50%;
                 border-color: var(--green);
@@ -110,22 +111,20 @@
         </style>
     </head>
     <body>
-        <div id="header">
-            <span>Referencias para uso de reclasifique</span>
-            <a href="https://www.garciacalcaterra.com" target="_self">&lt; garciacalcaterra.com</a>
-        </div>
-        <div id="term-container">
-            <div id = "terminal"></div>
-            <div id="controls">
-                <button type="button" id="up">^</button>
-                <button type="button" id="down">v</button>
-                <button type="button" id="left"><</button>
-                <button type="button" id="right">></button>
+        <div id="term-wrapper">
+            <div id="term-container">
+                <div id="terminal"></div>
+                <div id="controls">
+                    <button type="button" id="up">^</button>
+                    <button type="button" id="down">v</button>
+                    <button type="button" id="left"><</button>
+                    <button type="button" id="right">></button>
+                </div>
             </div>
         </div>
-        <aside>
-
-        </aside>
+        <div id="footer">
+            <a href="https://www.garciacalcaterra.com" target="_self">[b] back to main</a>
+        </div>
         <script type="module">
             import init, * as app from "./browser.js";
             Promise.sleep = (ms) => {
@@ -138,29 +137,21 @@
                 right: 4,
             })
             let eventHandler = eventId => {
-                console.log("eventHandler")
                 if (!app) {
                     return console.warn("App not yet initialized");
                 }
-                console.log("calling app.event with arg", eventId);
                 app.event(eventId);
             }
             document.getElementById("up").addEventListener("click", () => eventHandler(Event.up));
             document.getElementById("left").addEventListener("click", () => eventHandler(Event.left));
             document.getElementById("right").addEventListener("click", () => eventHandler(Event.right));
             document.getElementById("down").addEventListener("click", () => eventHandler(Event.down));
-            
+
             let canvas = document.getElementById("terminal");
-            window.canvasSizeW = function () {
-                return 120;
-            }
-            window.canvasSizeH = function () {
-                return 40;
-            }
+            window.canvasSizeW = function () { return 120; }
+            window.canvasSizeH = function () { return 40; }
             let term = new window.Terminal({
                 cursorBlink: false,
-                // +2 here to add 1 character of padding
-                // around the rendered symbols
                 cols: canvasSizeW()+2,
                 rows: canvasSizeH()+2,
                 cursorInactiveStyle: "none",
@@ -185,69 +176,58 @@
             term.attachCustomKeyEventHandler((ev) => {
                 console.log("attachCustomKeyEventHandler", ev);
             });
-            /**
-             * @param text {string}
-             * @param x {integer}
-             * @param y {integer}
-             * @param bold {bool}
-             * @param italic {bool}
-             * */
             window.writeToCanvas = function (text, x, y, bold, italic) {
-                console.log("writeToCanvas", text)
-                // +1 here because we have an extra character
-                // of padding around the edge of the terminal
-                // element
                 term.write(`\x1B[${y+1};${x+1}H`);
-                if (bold) {
-                    term.write("\x1B[1m");
-                }
-                if (italic) {
-                    term.write("\x1b[3m");
-                }
+                if (bold) { term.write("\x1B[1m"); }
+                if (italic) { term.write("\x1b[3m"); }
                 term.write(text);
                 term.refresh(x, Math.min(x+1, term.rows - 1));
             }
             window.writeToTerminal = (text) => {
-                console.log("writeToTerminal", text)
                 term.write(text);
             }
-            
+
             window.addEventListener("keydown", ev => {
                 ev.stopPropagation();
                 ev.stopImmediatePropagation();
                 let arg = 0;
                 switch (ev.key) {
                     case "ArrowUp":
-                    case "k":
-                        arg = Event.up;
-                        break;
+                    case "k": arg = Event.up; break;
                     case "ArrowDown":
-                    case "j":
-                        arg = Event.down;
-                        break;
+                    case "j": arg = Event.down; break;
                     case "ArrowLeft":
-                    case "h":
-                        arg = Event.left;
-                        break;
+                    case "h": arg = Event.left; break;
                     case "Enter":
                     case "ArrowRight":
-                    case "l":
-                        arg = Event.right;
-                        break;
-                    default:
-                        console.warn("Unknown key:", ev.code);
-                        break;
+                    case "l": arg = Event.right; break;
+                    case "b":
+                        window.location.href = "https://www.garciacalcaterra.com";
+                        return false;
+                    default: break;
                 }
                 eventHandler(arg);
                 return false;
             });
-            
+
+            function scaleTerminal() {
+                const wrapper = document.getElementById('term-wrapper');
+                const container = document.getElementById('term-container');
+                const availH = wrapper.clientHeight;
+                const availW = wrapper.clientWidth;
+                const scaleH = availH / container.scrollHeight;
+                const scaleW = availW / container.scrollWidth;
+                const scale = Math.min(scaleH, scaleW, 1);
+                container.style.transform = `scale(${scale})`;
+            }
+            window.addEventListener('resize', scaleTerminal);
+
             init("./browser_bg.wasm").then(async () => {
-                console.log("running app");
                 app.run();
                 app.event(1);
+                scaleTerminal();
             }).catch(console.error);
-            
+
         </script>
     </body>
 </html>
